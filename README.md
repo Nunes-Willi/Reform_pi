@@ -99,10 +99,9 @@ desejado e permita sua continuidade.
 
 **Os níveis de usuário do sistema**. 
    
-   A Prioridade seja que o acesso em geral apenas que o atendente ò tenha, mas alguns funcionários também poderão se utilizar ao sistema.  <!--Somente o gestor tem acesso? E os funcionários? Talvez seja para ambos, ou para funcionários de cargos diferentes, etc.-->
+   A prioridade da parte de funcionário é que o acesso em geral de aceitação de venda, compra de veículos seja do atendente e de demais funcionário envolvidos com a venda ò tenha. Já a prioridade da parte de cliente é a visualização dos veículos a venda.<!--Somente o gestor tem acesso? E os funcionários? Talvez seja para ambos, ou para funcionários de cargos diferentes, etc.-->
 
 **O que poderá ser feito no software**.
-
 Orçamento,ánalise de compra e venda, e gerenciamento de informações do cliente.
 <!-- Apenas o principal, sem pensar em
     telas ou detalhes específicos, pois isso será feito em outro momento. -->
@@ -122,25 +121,33 @@ miprecisaremos ser bem detalhistas, todavia agora a intenção é apenas fazer a
 
   - **Regra de negócio de entrada de dados dos veiculos**
 
-RN001- Entrada de veículo: quando cliente aparecer com uma venda de veículo, o atendente deve anotar todas as informações do veiculo para determinar o valor de compra.
+RN001- Entrada de veículo: quando cliente aparecer com uma venda de veículo presencial ou virtual (virtual seria o envio de imagens do veiculo), o atendente deve anotar todas as informações do veiculo para determinar o valor de compra.
 
 RN002- Pós análise: Após as anotações de todas informações do veiculo o atendente deve justificar cada detalhe e falha do veiculo para determinar o valor final de compra.
 
-RN003- Finalização de compra: feita a compra do veiculo o atendente deve resgitrar todos os dados do veiculo no estoque.
+RN003- Finalização de compra: feita a compra do veiculo o atendente deve resgitrar todos os dados do veiculo na concessionária ou no estoque.
    
- - **Regra de negócio de pedido e saída de dados dos veiculos**
+ - **Regra de negócio de compra e saída de dados dos veiculos**
   
-RN01- Iniciando o pedido: O atendente fala dos veículos que estão na loja e no estoque, para que o cliente anasalise e escolha o veículo que deseja;
+RN01- Iniciando a compra: O cliente que pode o não ter vindo por um anuncio do site falará com o atendente.Onde o funcionário fala dos veículos que estão na concessionária e no estoque, para que o cliente anasalise e escolha o veículo que deseja(caso não tenha vindo com o carro em mente do site);
 
-RN02- Verificação no estoque: Após a escolha, o gerente envia para o gerenciador de estoque o veículo escolhido pelo cliente;
+RN02- Verificação no estoque: Após a escolha, o gerente envia para o gerenciador de estoque o veículo escolhido pelo cliente (em caso do veículo não estar na loja diretamente);
 
-RN03- Após verificação do estoque: O gerenciador do estoque vai alertar se há o veículo desejado. Caso haja o produto seguir para a quarta regra, caso oposto encerrar pedido;
+RN03- Após verificação do estoque: O gerenciador do estoque vai alertar se há o veículo desejado. Caso haja o produto seguir para a quarta regra, caso oposto encerrar compra;
 
-RN04- Coleta de dados: Para a continuação do pedido o gerente deve pegar todos os dados do cliente e de seu veículo desejado, após a coleta de dados confirmar o pedido;
+RN04- Coleta de dados: Para a continuação da compra o gerente deve pegar todos os dados do cliente e de seu veículo desejado, após a coleta de dados confirmar a compra;
 
-RN05- Transferência de documetos: Após a confirmação do pedido o gerente deve fazer as tranferência dos documentos do carro para o cliente;
+RN05- Transferência de documetos: Após a confirmação do compra o gerente deve fazer as tranferência dos documentos do carro para o cliente;
 
 RN06- Após transferência dos documentos o atendente deve confirmar a aprovação do veículo para o cliente;
+
+ - **Regra de negócio visualização do site/app**
+  
+RN00- Login cliente: O cliente pode se cadastrar no site/app para que possa salvar os carros que gostou, comentar sobre os veículos e começar a conversa com atendente sobre a comprar de um veículo de forma virtual(os processosmais "radicais" terão de ser feito presencialmente).
+
+RN00- Venda de seu veículo: Caso o cliente tenha um veículo que queira vender, ele pode simplesmente tirar e mandar fotos de seu veículo juntamente com a documentação do  para que seja análisada pelo gerente geral.
+
+RN00- Após analise: Se o gerente querer comprar o veículo para a sua concessionária ele confirmara com o cliente a compra e o sistema deve postar o "novo" carro na lsita de carros a venda no site/app.
 
 
 <!-- RN006- Esteja presente nas redes sociais: Use as redes sociais para divulgar seus carros e manter seus clientes informados sobre novidades, promoções e eventos.
@@ -166,7 +173,7 @@ RF00 - Após marcar as informações da compra do veículo o sistema deve criar 
   
 <!-- RF00 - Sistema de cadastro de clientes: O sistema deve permitir o cadastro de clientes com as seguintes informações: Dados necessários: nome completo, cpf, endereço, número de telefone, e-mail e outras informações relevantes. Usuários: Vendedor/Administrador
 
-RF00 - Gerenciamento de conta do cliente: um sistema para que os administradores possam gerenciar suas contas, atualizando suas informações dos clientes como dados pessoais, dados de pagamento, histórico de pedidos e outras informações. -->
+RF00 - Gerenciamento de conta do cliente: um sistema para que os administradores possam gerenciar suas contas, atualizando suas informações dos clientes como dados pessoais, dados de pagamento, histórico de compras e outras informações. -->
 
 
 RF00 - Autenticação dos funcionários: um sistema para autenticar os funcionários diferentes, ao fazer login em sua conta antes de realizar uma venda o funcionário poderá ver os dados dos carros que o mesmo  vendeu, Essas informações serão utilizadas no relatório final do mês.
@@ -182,7 +189,7 @@ RF00 - pagamentos: o sistema  para processar os pagamentos dos clientes por meio
 
 - **Tela de transferência de documentos**
 
-RF00 - Confirmação de pedido: o sistema deve abrir uma janela para enviar uma confirmação do pedido do cliente, incluindo informações sobre o produto, preço total e informações de transferências de documentos.
+RF00 - Confirmação de compra: o sistema deve abrir uma janela para enviar uma confirmação do compra do cliente, incluindo informações sobre o produto, preço total e informações de transferências de documentos.
 
 RF00 - Transferência de documentos: Após a confrimação, sistema deverá abrir uma nova janela pedindo os documentos do veículo que será impresso além de ser enviado uma cópia para o email do cliente e do vendedor.
 
